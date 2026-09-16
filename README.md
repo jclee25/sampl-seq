@@ -61,8 +61,27 @@ sampl-seq/
 `<analysis>` is a user-defined analysis identifier. The same identifier is used
 under `config/output/`, `input/`, and `output/`.
 
-See [`testdata/README.md`](testdata/README.md) for the single-sample example layout,
-settings, and execution commands. Reference outputs are pending validation.
+See [`testdata/README.md`](testdata/README.md) for the single-sample example
+layout, settings, execution commands, validated outputs, and benchmark.
+
+## Test dataset and validated outputs
+
+The following files are provided as assets in the
+[`v1.0.0` release](https://github.com/jclee25/sampl-seq/releases/tag/v1.0.0):
+
+- [`test_R1.fastq.gz`](https://github.com/jclee25/sampl-seq/releases/download/v1.0.0/test_R1.fastq.gz):
+  single-sample R1 FASTQ test dataset containing 10,168,592 reads; and
+- [`test_expected_outputs_v1.0.0.zip`](https://github.com/jclee25/sampl-seq/releases/download/v1.0.0/test_expected_outputs_v1.0.0.zip):
+  validated outputs from the FASTQ-to-SIM9 workflow for pipeline verification.
+
+For this test dataset, the core pipeline was benchmarked on Rocky Linux 8.10
+with an Intel Xeon Silver 4514Y processor. Processing from FASTQ input through
+SIM9 co-localization analysis took approximately 6 min using 16 CPU cores, with
+a maximum observed resident memory of approximately 0.75 GB. At least 4 GB RAM
+is recommended for this test-scale analysis. This benchmark excludes optional
+taxonomic annotation and MCSPACE analysis. Runtime and memory requirements may
+increase with read number, retained particle number, ASV richness, and
+parallel-worker settings.
 
 ## Installation
 
