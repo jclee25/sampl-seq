@@ -5,6 +5,7 @@ input/**/*.fastq.gz
 input/**/*.fq
 input/**/*.fq.gz
 testdata/test_R1.fastq.gz
+testdata/test_expected_outputs_*.zip
 output/**
 !output/**/
 !output/**/.gitkeep
